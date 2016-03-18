@@ -1,0 +1,8 @@
+Number of data point : 89796
+Number of oil data : 32644
+Number of not oil data : 57152
+
+36 % de tache d'huile
+64% de non tache d'huile
+
+53 features

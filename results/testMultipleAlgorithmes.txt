@@ -1,0 +1,71 @@
+RandomForest
+The mean score is : 0.855672858479
+Elapsed time : 10.275588035583496
+
+Ada-Boost
+
+The mean score is : 0.843645596686
+Elapsed time : 37.39513802528381
+
+SVM
+
+The mean score is : 0.904004632723
+Elapsed time : 264.3711211681366
+
+
+---------------#### equilibrate training
+SVM equilibrate training
+
+The mean score is : 0.896788275647
+Elapsed time : 162.2772810459137
+
+Normal, maximise la marge de separation. Moins sensible à un déséquilibre
+
+#modif poid pour équilibre
+The mean score is : 0.904672813934
+Elapsed time : 373.5703670978546
+
+Random forest equilibrate training
+
+The mean score is : 0.86315648804
+Elapsed time : 7.193411827087402
+
+
+-------------- SVM different noyaux
+Noyaux : poly
+The mean score is : 0.874114659896
+Elapsed time : 484.4817109107971
+
+Noyaux : rbf
+The mean score is : 0.904004632723
+Elapsed time : 266.770259141922
+
+Noyaux : sigmoid
+The mean score is : 0.6388703283
+Elapsed time : 367.0209918022156
+
+-------------- Comparaison avec modification des poids
+
+Données déséquilibrées
+Confusion matrix
+[[ 6806  1301]
+ [  854 13488]]
+The mean score is : 0.904004632723
+Elapsed time : 301.5402479171753
+
+Poids pour rééquilibrer
+Confusion matrix
+[[ 7388   719]
+ [ 1421 12921]]
+The mean score is : 0.904672813934
+Elapsed time : 408.84738397598267
+
+------- Garde 99% de la variance avec PCA
+
+Confusion matrix
+[[ 7322   785]
+ [ 1436 12906]]
+The mean score is : 0.901064635396
+Elapsed time : 389.30426692962646
+
+Bof, besoin de 44 features sur 53
