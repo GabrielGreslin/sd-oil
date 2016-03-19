@@ -4,3 +4,4 @@ data/F_data_oil_SUPAERO.csv
 data/F_label_oil_SUPAERO.csv
 data/Small_F_oil_data_SUPAERO.csv
 data/Small_F_oil_label_SUPAERO.csv
+*.pyc

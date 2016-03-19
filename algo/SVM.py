@@ -1,5 +1,8 @@
 __author__ = 'Gabriel'
 
+import sys
+sys.path.append('../')
+
 from loading import loadData
 
 import time

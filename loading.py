@@ -131,3 +131,40 @@ def forceProportion(values,labels,proportionClass1 = 0.5):
         currentLineRead +=1
 
     return newValues,newLabels
+
+
+def loadDataByCluster(cluster, dataType='small') :
+
+    dirPath = ''
+    path = dirPath + 'data/Small_F_oil_data_SUPAERO.csv'
+    if not os.path.isfile(dirPath + path) :
+        dirPath = '../' + dirPath
+    if not os.path.isfile(dirPath + path) :
+        dirPath = '../' + dirPath
+    if not os.path.isfile(dirPath + path) :
+        dirPath = '../' + dirPath
+
+    if dataType == 'small':
+        fileNameData = dirPath + 'data/Small_F_oil_data_SUPAERO.csv'
+        fileNameLabel = dirPath + 'data/Small_F_oil_label_SUPAERO.csv'
+        x = numpy.genfromtxt(fileNameData, delimiter=",")
+        y = numpy.genfromtxt(fileNameLabel, delimiter=",")
+    elif dataType == 'big':
+        fileNameData = dirPath + 'data/F_data_oil_SUPAERO.csv'
+        fileNameLabel = dirPath + 'data/F_label_oil_SUPAERO.csv'
+        fileNameCluster = dirPath + 'data/cluster.csv'
+        x = numpy.genfromtxt(fileNameData, delimiter=",")
+        y = numpy.genfromtxt(fileNameLabel, delimiter=",")
+        c = numpy.genfromtxt(fileNameCluster, delimiter=",")
+
+    x_ = []
+    y_ = []
+    for i in range(0, len(x)):
+        if c[i] == cluster:
+            x_.append(x)
+            y_.append(y)
+    x_ = numpy.array(x_, dtype=object)
+    y_ = numpy.array(y_, dtype=object)
+
+    X_train, X_test, y_train, y_test = train_test_split(x_, y_, test_size=0.25, random_state=42)
+    return X_train, X_test, y_train, y_test
