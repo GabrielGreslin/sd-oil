@@ -10,8 +10,8 @@ from sklearn.ensemble import RandomForestClassifier
 X_train, X_test,y_train, y_test = loadData("big")
 
 start = time.time()
-
-randomF = RandomForestClassifier(n_estimators=20,max_depth=10)
+#(n_estimators=30,max_depth=15)
+randomF = RandomForestClassifier(n_estimators=100,max_depth=None)
 randomF.fit(X_train,y_train)
 
 meanScorerandomF = randomF.score(X_test,y_test)

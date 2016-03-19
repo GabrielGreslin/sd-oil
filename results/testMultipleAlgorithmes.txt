@@ -1,6 +1,6 @@
-RandomForest
-The mean score is : 0.855672858479
-Elapsed time : 10.275588035583496
+RandomForest 100 arbres, profondeur max pas définie
+The mean score is : 0.897233729788
+Elapsed time : 98.16861486434937
 
 Ada-Boost
 
@@ -12,12 +12,15 @@ SVM
 The mean score is : 0.904004632723
 Elapsed time : 264.3711211681366
 
+Bayesian estimator
+The mean score is : 0.726713884806
+Elapsed time : 0.12300705909729004
 
 ---------------#### equilibrate training
 SVM equilibrate training
 
 The mean score is : 0.896788275647
-Elapsed time : 162.2772810459137
+Elapsed time : 162.2772810459137cx
 
 Normal, maximise la marge de separation. Moins sensible à un déséquilibre
 
@@ -32,6 +35,10 @@ Elapsed time : 7.193411827087402
 
 
 -------------- SVM different noyaux
+Noyaux : lineaire
+The mean score is : 0.793042006325
+Elapsed time : 24.37239408493042
+
 Noyaux : poly
 The mean score is : 0.874114659896
 Elapsed time : 484.4817109107971
@@ -43,6 +50,8 @@ Elapsed time : 266.770259141922
 Noyaux : sigmoid
 The mean score is : 0.6388703283
 Elapsed time : 367.0209918022156
+
+Créer un nouveau noyau n'a pas vraiment de sens puisqu'on ne connait pas la signification des features fournies.
 
 -------------- Comparaison avec modification des poids
 
@@ -69,3 +78,7 @@ The mean score is : 0.901064635396
 Elapsed time : 389.30426692962646
 
 Bof, besoin de 44 features sur 53
+
+----------------------- Voting
+
+
