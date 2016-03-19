@@ -80,5 +80,7 @@ Elapsed time : 389.30426692962646
 Bof, besoin de 44 features sur 53
 
 ----------------------- Voting
-
+ada, random forest and  SVM
+The mean score is : 0.887522829525
+Elapsed time : 445.42791295051575
 

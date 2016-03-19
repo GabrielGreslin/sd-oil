@@ -161,10 +161,11 @@ def loadDataByCluster(cluster, dataType='small') :
     y_ = []
     for i in range(0, len(x)):
         if c[i] == cluster:
-            x_.append(x)
-            y_.append(y)
-    x_ = numpy.array(x_, dtype=object)
-    y_ = numpy.array(y_, dtype=object)
+            x_.append(x[i])
+            y_.append(y[i])
+
+    x_ = numpy.array(x_, dtype="float")
+    y_ = numpy.array(y_, dtype="float")
 
     X_train, X_test, y_train, y_test = train_test_split(x_, y_, test_size=0.25, random_state=42)
     return X_train, X_test, y_train, y_test

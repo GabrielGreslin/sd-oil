@@ -17,15 +17,18 @@ def voter(predicteursListe,Xtest):
     for i in range(len(Xtest)):
         vote = sum([predictions[j][i] for j in range(len(predicteursListe))])
 
-        if vote >= len(predicteursListe)/2:
+        if vote > 1.9:
             predictionFinale.append(1.0)
-        else:
+        elif vote < 0.1:
             predictionFinale.append(0.0)
+        else:
+            predictionFinale.append(0.5)
 
     return predictionFinale
 
 """
-The goal is to make random forest, ada-boost et SVM vote for the classification of oil or not, and see if it make the right decision
+The goal is to make random forest et SVM vote for the classification of oil or not, and see if it make the right decision
+Then
 
 """
 
@@ -36,10 +39,6 @@ start = time.time()
 
 wc = SVC(probability =False,class_weight = {0.0:1,1.0:1.75}) #
 wc.fit(X_train,y_train)
-print("Elapsed time : "+str(time.time()-start))
-
-adada = AdaBoostClassifier()
-adada.fit(X_train,y_train)
 print("Elapsed time : "+str(time.time()-start))
 
 rF = RandomForestClassifier(n_estimators=50,class_weight = {0.0:1,1.0:1.75})
